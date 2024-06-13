@@ -1,0 +1,44 @@
+.contact {
+  display: grid;
+  grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+  column-gap: 2rem;
+  color: black;
+  font-family: "Abril Fatface", serif;
+  background-color: var(--color-white);
+  border-top: solid black 2px;
+}
+
+.contactContent {
+  padding: calc(var(--header-height) + 3rem) 3rem 3rem 3rem;
+}
+
+h1.contactTitle {
+  font-size: 60px;
+}
+
+h2.contactTitle {
+  font-size: 45px;
+  margin-top: 3rem;
+}
+
+.contactText {
+  font-size: 28px;
+  font-family: serif;
+  text-align: justify;
+  margin: 0;
+}
+
+.contactLink {
+  display: inline-block;
+  margin: 0.25rem 0;
+  padding: 0 0.5rem;
+  border: solid black 2px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.contactLink:hover {
+  transition: 0.5s;
+  background-color: black;
+  color: white;
+}

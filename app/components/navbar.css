@@ -1,0 +1,208 @@
+.navbar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  background-color: transparent;
+  height: 50vh;
+  width: 100vw;
+  font-size: 30px;
+  z-index: 10;
+  color: var(--color-white);
+  will-change: position, top, background-color, height, font-size, transform;
+}
+
+/* .navbar.stuck {
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  height: var(--header-height);
+  font-size: 24px;
+  animation: stickNavbar 1s;
+  transform: translateY(0);
+}
+
+@keyframes stickNavbar {
+  from {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    height: 50vh;
+    font-size: 30px;
+  }
+  to {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: var(--header-height);
+    font-size: 24px;
+    transform: translateY(0);
+  }
+}
+
+.navbar.unstuck {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  height: 50vh;
+  animation: unstickNavbar 1s;
+}
+
+@keyframes unstickNavbar {
+  from {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: var(--header-height);
+    font-size: 24px;
+  }
+  to {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    height: 50vh;
+    font-size: 30px;
+  }
+} */
+
+.navbarButton {
+  position: absolute;
+  top: 50%;
+  font-family: "Abril Fatface", serif;
+}
+
+.navbarButton:hover {
+  transition: 0.5s;
+  color: var(--color-white-secondary);
+}
+
+#appointmentsButton {
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+#contactButton {
+  right: 15%;
+  transform: translate(50%, -50%);
+}
+
+.navbarButton:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: var(--color-white-secondary);
+  height: 2px;
+  transition: right 0.2s ease-out;
+}
+
+.navbarButton:hover:before {
+  right: 0;
+}
+
+.barberPoleContainer {
+  margin: 10px auto;
+  height: calc(100% - 2 * 10px);
+  aspect-ratio: 84 / 306;
+}
+
+.ball {
+  height: 7.19%;
+  aspect-ratio: 1;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  background-color: var(--color-white);
+}
+
+.endCap {
+  width: 64.286%;
+  height: 4.902%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5.952%;
+  margin-bottom: 5.952%;
+  background-color: var(--color-white);
+}
+
+.cap {
+  width: 100%;
+  height: 4.902%;
+  background-color: var(--color-white);
+}
+
+.barberWrap {
+  height: 56.209%;
+  width: 64.286%;
+  margin-top: 5.952%;
+  margin-bottom: 5.952%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.barber {
+  height: 100%;
+  width: 100%;
+  position: inherit;
+  background: var(--color-white);
+  background-color: -webkit-linear-gradient(
+    -45deg,
+    var(--color-white) 0%,
+    var(--color-white) 6.25%,
+    var(--color-red) 6.25%,
+    var(--color-red) 12.5%,
+    var(--color-white) 12.5%,
+    var(--color-white) 18.75%,
+    var(--color-blue) 18.75%,
+    var(--color-blue) 25%
+  );
+  background: -moz-linear-gradient(
+    -45deg,
+    var(--color-white) 0%,
+    var(--color-white) 6.25%,
+    var(--color-red) 6.25%,
+    var(--color-red) 12.5%,
+    var(--color-white) 12.5%,
+    var(--color-white) 18.75%,
+    var(--color-blue) 18.75%,
+    var(--color-blue) 25%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    var(--color-white) 0%,
+    var(--color-white) 6.25%,
+    var(--color-red) 6.25%,
+    var(--color-red) 12.5%,
+    var(--color-white) 12.5%,
+    var(--color-white) 18.75%,
+    var(--color-blue) 18.75%,
+    var(--color-blue) 25%
+  );
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-white) 0%,
+    var(--color-white) 6.25%,
+    var(--color-red) 6.25%,
+    var(--color-red) 12.5%,
+    var(--color-white) 12.5%,
+    var(--color-white) 18.75%,
+    var(--color-blue) 18.75%,
+    var(--color-blue) 25%
+  );
+  background-size: 100% 200%;
+  -webkit-animation: barberpole 1.5s infinite linear;
+  animation: barberpole 2.5s infinite linear;
+}
+
+@keyframes barberpole {
+  from {
+    background-position: 0 0%;
+  }
+  to {
+    background-position: 0 58%;
+  }
+}

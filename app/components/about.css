@@ -1,0 +1,60 @@
+.about {
+  display: grid;
+  grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+  column-gap: 2rem;
+  height: 100vh;
+  width: 100vw;
+  color: black;
+  font-family: "Abril Fatface", serif;
+  background-color: var(--color-white);
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+}
+
+.aboutContent {
+  padding: calc(var(--header-height) + 3rem) 3rem 3rem 3rem;
+}
+
+h1.aboutTitle {
+  font-size: 60px;
+}
+
+h2.aboutTitle {
+  font-size: 45px;
+}
+
+h3.aboutTitle {
+  font-size: 36px;
+}
+
+.aboutPrice {
+  font-family: serif;
+}
+
+.aboutDescription {
+  font-family: serif;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.aboutText {
+  margin-top: 3rem;
+  font-size: 28px;
+  font-family: serif;
+  text-align: justify;
+}
+
+.aboutButton {
+  display: inline-block;
+  margin: 0.25rem 0;
+  padding: 0 0.5rem;
+  border: solid black 2px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.aboutButton:hover {
+  transition: 0.5s;
+  background-color: black;
+  color: white;
+}

@@ -10,11 +10,34 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import stylesAbout from "~/components/about.css";
+import stylesAppointments from "~/components/appointments.css";
+import stylesContact from "~/components/contact.css";
+import stylesFooter from "~/components/footer.css";
+import stylesLanding from "~/components/landing.css";
+import stylesNavbar from "~/components/navbar.css";
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 
+import stylesRoot from "./root.css";
+
 export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&display=swap",
+  },
   { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: stylesLanding },
+  { rel: "stylesheet", href: stylesNavbar },
+  { rel: "stylesheet", href: stylesAbout },
+  { rel: "stylesheet", href: stylesAppointments },
+  { rel: "stylesheet", href: stylesContact },
+  { rel: "stylesheet", href: stylesFooter },
+  { rel: "stylesheet", href: stylesRoot },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
@@ -31,7 +54,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body
+        className="h-full"
+        style={{ backgroundColor: "var(--color-white)" }}
+      >
         <Outlet />
         <ScrollRestoration />
         <Scripts />

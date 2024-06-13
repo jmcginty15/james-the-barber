@@ -1,0 +1,24 @@
+.landing {
+  position: sticky;
+  color: var(--color-white);
+  font-size: 48px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.landingOverlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.landingSvg {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  height: 90vh;
+}
