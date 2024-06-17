@@ -1,4 +1,4 @@
-import { RefObject, useLayoutEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 
 import poleCaps from "../assets/vectorstock_35558/barberPole.png";
 
@@ -47,7 +47,7 @@ export default function Navbar(props: {
   const [isStuck, setIsStuck] = useState<boolean | null>(null);
   const [hasBeenSet, setHasBeenSet] = useState<boolean>(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
