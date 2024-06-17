@@ -37,17 +37,13 @@ export default function About(props: { scrollTo: (linkName: string) => void }) {
           oil.
         </p>
         <div className="aboutText">
-          <button className="aboutButton" onClick={() => scrollTo("Contact")}>
-            Contact me
-          </button>{" "}
-          for more options and prices.
+          More options available
           <br />
-          Or,{" "}
           <button
             className="aboutButton"
             onClick={() => scrollTo("Appointments")}
           >
-            schedule an appointment.
+            Schedule an appointment
           </button>
         </div>
       </div>

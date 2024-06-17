@@ -9,7 +9,7 @@
 }
 
 .contactContent {
-  padding: calc(var(--header-height) + 3rem) 3rem 3rem 3rem;
+  padding: 3rem;
 }
 
 h1.contactTitle {

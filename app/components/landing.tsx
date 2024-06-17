@@ -11,7 +11,11 @@ export default function Landing(props: {
   const landingRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="landing" style={{ backgroundImage: `url(${background})` }}>
+    <div
+      ref={landingRef}
+      className="landing"
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <Navbar landingRef={landingRef} scrollTo={scrollTo} />
       <div className="landingOverlay">
         <svg className="landingSvg" viewBox="0 0 500 500" fill="currentColor">

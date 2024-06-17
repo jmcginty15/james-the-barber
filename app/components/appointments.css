@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
   column-gap: 2rem;
-  color: black;
+  color: var(--color-white);
   font-family: "Abril Fatface", serif;
-  margin: calc(var(--header-height) + 3rem) 3rem 3rem 3rem;
-  background-color: var(--color-white-transparent);
+  /* margin: 3rem; */
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .appointmentsContent {

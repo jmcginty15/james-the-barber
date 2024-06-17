@@ -1,72 +1,70 @@
 .navbar {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 100%;
-  background-color: transparent;
+}
+
+.navbar.unstuck {
+  display: block;
+  position: absolute;
+  top: 25vh;
+  bottom: 75vh;
   height: 50vh;
-  width: 100vw;
+  background-color: transparent;
   font-size: 30px;
   z-index: 10;
   color: var(--color-white);
   will-change: position, top, background-color, height, font-size, transform;
 }
 
-/* .navbar.stuck {
+.navbar.stuck {
+  display: block;
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.75);
   height: var(--header-height);
   font-size: 24px;
   animation: stickNavbar 1s;
-  transform: translateY(0);
+  z-index: 10;
+  will-change: background-color, height, font-size, transform;
+  animation: 0.25s stickNavbar;
+  animation-timing-function: ease-in-out;
+}
+
+.navbar.hidden {
+  display: none;
 }
 
 @keyframes stickNavbar {
   from {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: transparent;
     height: 50vh;
     font-size: 30px;
   }
   to {
-    position: fixed;
-    top: 0;
     background-color: rgba(0, 0, 0, 0.75);
     height: var(--header-height);
     font-size: 24px;
-    transform: translateY(0);
   }
 }
 
-.navbar.unstuck {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  height: 50vh;
-  animation: unstickNavbar 1s;
+.navbar.animate {
+  animation: 0.25s unstickNavbar;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes unstickNavbar {
   from {
-    position: fixed;
-    top: 0;
     background-color: rgba(0, 0, 0, 0.75);
+    bottom: calc(25vh + var(--header-height));
     height: var(--header-height);
     font-size: 24px;
   }
   to {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: transparent;
+    bottom: 75vh;
     height: 50vh;
     font-size: 30px;
   }
-} */
+}
 
 .navbarButton {
   position: absolute;
@@ -105,9 +103,18 @@
 }
 
 .barberPoleContainer {
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 10px auto;
   height: calc(100% - 2 * 10px);
-  aspect-ratio: 84 / 306;
+  aspect-ratio: 100 / 306;
+}
+
+.barberPoleCaps {
+  height: 100%;
+  object-fit: contain;
 }
 
 .ball {
@@ -136,12 +143,17 @@
 }
 
 .barberWrap {
-  height: 56.209%;
+  position: absolute;
+  top: 22.4%;
+  bottom: 22.4%;
+  left: 15.5%;
+  right: 15.5%;
+  /* height: 56.209%;
   width: 64.286%;
   margin-top: 5.952%;
   margin-bottom: 5.952%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
 }
 
 .barber {
@@ -203,6 +215,6 @@
     background-position: 0 0%;
   }
   to {
-    background-position: 0 58%;
+    background-position: 0 60%;
   }
 }
