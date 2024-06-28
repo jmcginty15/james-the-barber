@@ -30,6 +30,10 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&display=swap",
   },
+  {
+    rel: "stylesheet",
+    href: "https://api.tiles.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css",
+  },
   { rel: "stylesheet", href: stylesheet },
   { rel: "stylesheet", href: stylesLanding },
   { rel: "stylesheet", href: stylesNavbar },

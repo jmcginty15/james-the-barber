@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { useRef } from "react";
 
 import About from "~/components/about";
@@ -8,6 +8,7 @@ import Footer from "~/components/footer";
 import Landing from "~/components/landing";
 
 import background from "../assets/backbackground.jpeg";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => [
   {
@@ -16,9 +17,14 @@ export const meta: MetaFunction = () => [
   },
 ];
 
+export const loader: LoaderFunction = async () => {
+  return { token: process.env.MAPBOX_GL_TOKEN };
+};
+
 export default function Index() {
   const appointmentsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const { token } = useLoaderData<{ token: string }>();
 
   const scrollTo = (linkName: string) => {
     const ref = linkName === "Appointments" ? appointmentsRef : contactRef;
@@ -45,7 +51,7 @@ export default function Index() {
           <Appointments />
         </div>
         <div ref={contactRef}>
-          <Contact />
+          <Contact token={token} />
         </div>
         <Footer />
       </div>

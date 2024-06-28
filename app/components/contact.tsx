@@ -1,4 +1,14 @@
-export default function Contact() {
+import { Map, Marker } from "react-map-gl";
+
+const mapProps = {
+  latitude: 36.115202,
+  longitude: -97.058219,
+  zoom: 17,
+};
+
+export default function Contact(props: { token: string }) {
+  const { token } = props;
+
   return (
     <div className="contact">
       <div className="contactContent">
@@ -13,7 +23,16 @@ export default function Contact() {
           </a>
         </p>
       </div>
-      <div className="contactContent">Map widget goes here</div>
+      <div className="contactContent" style={{ height: "100%", width: "100%" }}>
+        <Map
+          mapboxAccessToken={token}
+          initialViewState={mapProps}
+          style={{ width: "100%", height: "100%" }}
+          mapStyle="mapbox://styles/mapbox/streets-v9"
+        >
+          <Marker latitude={mapProps.latitude} longitude={mapProps.longitude} />
+        </Map>
+      </div>
     </div>
   );
 }

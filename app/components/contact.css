@@ -1,6 +1,6 @@
 .contact {
   display: grid;
-  grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+  grid-template-columns: calc(30% - 1rem) calc(70% - 1rem);
   column-gap: 2rem;
   color: black;
   font-family: "Abril Fatface", serif;
