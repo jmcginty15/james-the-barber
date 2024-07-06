@@ -23,14 +23,18 @@ export default function Contact(props: { token: string }) {
           </a>
         </p>
       </div>
-      <div className="contactContent" style={{ height: "100%", width: "100%" }}>
+      <div className="contactContent">
         <Map
           mapboxAccessToken={token}
           initialViewState={mapProps}
-          style={{ width: "100%", height: "100%" }}
-          mapStyle="mapbox://styles/mapbox/streets-v9"
+          style={{ width: "100%", height: "100%", zIndex: 0 }}
+          mapStyle="mapbox://styles/mapbox/outdoors-v12"
         >
-          <Marker latitude={mapProps.latitude} longitude={mapProps.longitude} />
+          <Marker
+            latitude={mapProps.latitude}
+            longitude={mapProps.longitude}
+            color="red"
+          />
         </Map>
       </div>
     </div>

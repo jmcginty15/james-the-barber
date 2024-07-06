@@ -46,9 +46,11 @@ export default function Navbar(props: {
   const { landingRef, scrollTo } = props;
   const [isStuck, setIsStuck] = useState<boolean | null>(null);
   const [hasBeenSet, setHasBeenSet] = useState<boolean>(false);
+  const [threshold, setThreshold] = useState<number>(0.6);
+  const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
+  const createNewObserver = () => {
+    const newObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting && !isStuck) {
@@ -57,11 +59,31 @@ export default function Navbar(props: {
           } else if (entry.isIntersecting) setIsStuck(false);
         });
       },
-      { threshold: 0.75 },
+      { threshold },
     );
 
     const current = landingRef.current;
-    if (current) observer.observe(current);
+    if (current) newObserver.observe(current);
+
+    setObserver(newObserver);
+  };
+
+  const disconnectCurrentObserver = () => observer?.disconnect();
+
+  const isTall = () => window.innerHeight >= window.innerWidth;
+
+  useEffect(() => {
+    setThreshold(isTall() ? 0.6 : 0.75);
+    window.addEventListener("resize", () => {
+      const portrait = isTall();
+      if (portrait && threshold !== 0.6) setThreshold(0.6);
+      else if (!portrait && threshold !== 0.75) setThreshold(0.75);
+    });
+  }, [threshold]);
+
+  useEffect(() => {
+    if (observer) disconnectCurrentObserver();
+    createNewObserver();
   });
 
   return (

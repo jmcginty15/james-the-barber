@@ -1,4 +1,5 @@
 import type { LoaderFunction, MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { useRef } from "react";
 
 import About from "~/components/about";
@@ -8,7 +9,6 @@ import Footer from "~/components/footer";
 import Landing from "~/components/landing";
 
 import background from "../assets/backbackground.jpeg";
-import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => [
   {

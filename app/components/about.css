@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
   column-gap: 2rem;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   color: black;
   font-family: "Abril Fatface", serif;
@@ -57,4 +57,41 @@ h3.aboutTitle {
   transition: 0.5s;
   background-color: black;
   color: white;
+}
+
+@media (min-height: 100vw) {
+  .about {
+    grid-template-columns: 100%;
+  }
+
+  .aboutContent {
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto;
+    width: 90%;
+  }
+
+  #aboutContentRight {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .aboutText {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  h1.aboutTitle {
+    font-size: 48px;
+  }
+
+  h2.aboutTitle {
+    font-size: 36px;
+  }
+
+  h3.aboutTitle {
+    font-size: 24px;
+  }
 }

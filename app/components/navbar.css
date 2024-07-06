@@ -46,6 +46,30 @@
   }
 }
 
+@keyframes stickNavbarSmall {
+  from {
+    background-color: transparent;
+    height: 20vh;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: var(--header-height);
+  }
+}
+
+@keyframes stickNavbarMedium {
+  from {
+    background-color: transparent;
+    height: 20vh;
+    font-size: 30px;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: var(--header-height);
+    font-size: 24px;
+  }
+}
+
 .navbar.animate {
   animation: 0.25s unstickNavbar;
   animation-timing-function: ease-in-out;
@@ -62,6 +86,36 @@
     background-color: transparent;
     bottom: 75vh;
     height: 50vh;
+    font-size: 30px;
+  }
+}
+
+@keyframes unstickNavbarSmall {
+  from {
+    background-color: rgba(0, 0, 0, 0.75);
+    bottom: calc(25vh + var(--header-height));
+    height: var(--header-height);
+  }
+  to {
+    background-color: transparent;
+    top: 40vh;
+    bottom: 60vh;
+    height: 20vh;
+  }
+}
+
+@keyframes unstickNavbarMedium {
+  from {
+    background-color: rgba(0, 0, 0, 0.75);
+    bottom: calc(25vh + var(--header-height));
+    height: var(--header-height);
+    font-size: 24px;
+  }
+  to {
+    background-color: transparent;
+    top: 40vh;
+    bottom: 60vh;
+    height: 20vh;
     font-size: 30px;
   }
 }
@@ -216,5 +270,56 @@
   }
   to {
     background-position: 0 60%;
+  }
+}
+
+@media (min-height: 100vw) {
+  .navbar.unstuck {
+    top: 40vh;
+    bottom: 60vh;
+    height: 20vh;
+  }
+
+  #appointmentsButton {
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  #contactButton {
+    right: 20%;
+    transform: translate(50%, -50%);
+  }
+
+  .navbar.animate {
+    animation: 0.25s unstickNavbarMedium;
+  }
+
+  .navbar.stuck {
+    animation: 0.25s stickNavbarMedium;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar.unstuck {
+    font-size: 14px;
+  }
+
+  .navbar.animate {
+    animation: 0.25s unstickNavbarSmall;
+  }
+
+  .navbar.stuck {
+    animation: 0.25s stickNavbarSmall;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 300px) {
+  .navbar.unstuck {
+    font-size: 12px;
+  }
+
+  .navbar.stuck {
+    font-size: 12px;
   }
 }

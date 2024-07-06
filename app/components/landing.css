@@ -16,9 +16,22 @@
 
 .landingSvg {
   position: absolute;
-  top: 10vh;
+  top: 55vh;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   margin: auto;
   height: 90vh;
+}
+
+@media (min-height: 100vw) {
+  .landingSvg {
+    top: 52vh;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+@media (max-width: 300px) {
+  .landingSvg {
+    transform: translate(-50%, -50%) scale(0.45);
+  }
 }

@@ -27,3 +27,40 @@ h2.appointmentsTitle {
   text-align: justify;
   margin: 0;
 }
+
+@media (min-height: 100vw) {
+  .appointments {
+    grid-template-columns: 100%;
+  }
+
+  .appointmentsContent {
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  h1.appointmentsTitle {
+    font-size: 48px;
+  }
+
+  h2.appointmentsTitle {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 300px) {
+  h1.appointmentsTitle {
+    font-size: 36px;
+  }
+
+  h2.appointmentsTitle {
+    font-size: 24px;
+  }
+
+  .appointmentsText {
+    font-size: 20px;
+  }
+}

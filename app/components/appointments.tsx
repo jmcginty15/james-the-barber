@@ -8,7 +8,13 @@ export default function Appointments() {
         <p className="appointmentsText">10am - 5pm</p>
       </div>
       <div className="appointmentsContent">
-        Appointments widget from Resurva goes here
+        <iframe
+          src="https://dbajamesthebarber.resurva.com/book?embedded=true"
+          title="resurva-frame"
+          width="800"
+          height="600"
+          style={{ width: "100%", height: "50vh" }}
+        />
       </div>
     </div>
   );

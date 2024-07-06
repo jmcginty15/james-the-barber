@@ -56,3 +56,13 @@
   left: -15%;
   width: 50%;
 }
+
+@media (max-width: 767px) {
+  .footer {
+    grid-template-columns: 100%;
+  }
+
+  .footerContent {
+    padding: 1rem;
+  }
+}

@@ -14,7 +14,7 @@ export default function About(props: { scrollTo: (linkName: string) => void }) {
           in downtown Stillwater, Oklahoma.
         </p>
       </div>
-      <div className="aboutContent">
+      <div id="aboutContentRight" className="aboutContent">
         <h3 className="aboutTitle">
           Regular haircut | <span className="aboutPrice">$32.00</span>
         </h3>
