@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
+
 export default function Appointments() {
   return (
     <div className="appointments">
@@ -10,7 +12,7 @@ export default function Appointments() {
       <div className="appointmentsContent">
         <iframe
           src="https://dbajamesthebarber.resurva.com/book?embedded=true"
-          title="resurva-frame"
+          name="resurva-frame"
           width="800"
           height="600"
           style={{ width: "100%", height: "50vh" }}
