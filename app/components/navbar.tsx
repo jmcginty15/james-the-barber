@@ -84,7 +84,7 @@ export default function Navbar(props: {
   useEffect(() => {
     if (observer) disconnectCurrentObserver();
     createNewObserver();
-  });
+  }, []);
 
   return (
     <>
