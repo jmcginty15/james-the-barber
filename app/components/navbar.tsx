@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 
-import poleCaps from "../assets/vectorstock_35558/barberPole.png";
+import poleCaps from "../assets/barberPole.png";
 
 function NavbarContent(props: { scrollTo: (linkName: string) => void }) {
   const { scrollTo } = props;
